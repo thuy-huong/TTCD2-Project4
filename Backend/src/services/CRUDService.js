@@ -118,4 +118,5 @@ module.exports = {
     getUserById: getUserById,
     updateUserData: updateUserData,
     deleteUserById: deleteUserById,
+    
 }
