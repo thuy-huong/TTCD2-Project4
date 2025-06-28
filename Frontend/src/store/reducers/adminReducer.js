@@ -1,33 +1,39 @@
+import { size } from 'lodash';
 import actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    isLoggedIn: false,
-    adminInfo: null
-}
+    allCodes: {
+        sizes: [],
+        roles: [],
+        positions: [],
+    },
+    isLoadingAllCode: false,
+};
 
-const appReducer = (state = initialState, action) => {
+const adminReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.ADMIN_LOGIN_SUCCESS:
+        case actionTypes.FETCH_ALLCODES_START:
             return {
                 ...state,
-                isLoggedIn: true,
-                adminInfo: action.adminInfo
-            }
-        case actionTypes.ADMIN_LOGIN_FAIL:
+                isLoadingAllCode: true,
+            };
+        case actionTypes.FETCH_ALLCODES_SUCCESS:
             return {
                 ...state,
-                isLoggedIn: false,
-                adminInfo: null
-            }
-        case actionTypes.PROCESS_LOGOUT:
+                allCodes: {
+                    ...state.allCodes,
+                    [action.codeType.toLowerCase() + 's']: action.data  // Ví dụ: "size" -> "sizes"
+                },
+                isLoadingAllCode: false,
+            };
+        case actionTypes.FETCH_ALLCODES_FAILED:
             return {
                 ...state,
-                isLoggedIn: false,
-                adminInfo: null
-            }
+                isLoadingAllCode: false,
+            };
         default:
             return state;
     }
 }
 
-export default appReducer;
+export default adminReducer;

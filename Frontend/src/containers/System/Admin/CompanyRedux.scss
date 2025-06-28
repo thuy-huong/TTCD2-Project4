@@ -1,0 +1,26 @@
+.container-add-company{
+    background-color: #fff;
+    border-radius: 10px;
+
+    .btn-save-company{
+        height: auto !important;
+        padding: 5px;
+    }
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #0d6efd; 
+    }
+.preview-img-container{
+    .label-upload-img {
+            padding: 5px;
+            border-radius: 5px;
+            background: #ddd;
+            cursor: pointer;   }
+    .preview-img{
+        height: 50px;
+        border: 1px solid red;
+    }
+}

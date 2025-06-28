@@ -11,6 +11,15 @@ module.exports = {
       companyId: {
         type: Sequelize.INTEGER
       },
+      category: {
+        type: Sequelize.INTEGER
+      },
+      position: {
+        type: Sequelize.INTEGER
+      },
+      level: {
+        type: Sequelize.INTEGER
+      },
       title: {
         type: Sequelize.STRING
       },
@@ -42,20 +51,12 @@ module.exports = {
         type: Sequelize.DATE
       },
       status: {
-        type: Sequelize.TINYINT
+        type: Sequelize.INTEGER
       },
       createdAt: {
         type: Sequelize.DATE
       },
       updatedAt: {
-        type: Sequelize.DATE
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });

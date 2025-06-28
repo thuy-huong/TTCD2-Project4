@@ -1,7 +1,8 @@
 'use strict';
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('ApplicationProfiles', {
+    await queryInterface.createTable('CandidateProfile', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,8 +21,11 @@ module.exports = {
       about: {
         type: Sequelize.TEXT
       },
+      position: {
+        type: Sequelize.STRING
+      },
       experienceYears: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.INTEGER
       },
       skills: {
         type: Sequelize.TEXT
@@ -33,7 +37,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       status: {
-        type: Sequelize.TINYINT
+        type: Sequelize.INTEGER
       },
       createdAt: {
         type: Sequelize.DATE
@@ -42,16 +46,16 @@ module.exports = {
         type: Sequelize.DATE
       },
       createdAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('ApplicationProfiles');
+    await queryInterface.dropTable('CandidateProfile');
   }
 };

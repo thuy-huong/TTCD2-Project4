@@ -19,7 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     receiverId: DataTypes.INTEGER,
     message: DataTypes.TEXT,
     sentAt: DataTypes.DATE,
-    isRead: DataTypes.BOOLEAN
+    isRead: DataTypes.BOOLEAN,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Message',

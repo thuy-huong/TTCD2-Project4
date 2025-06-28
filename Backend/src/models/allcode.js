@@ -3,28 +3,26 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class JobLevel extends Model {
+  class AllCode extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
-      JobLevel.belongsToMany(models.JobPost, {
-        through: models.JobPostCategoriesPositionLevel,
-        foreignKey: 'levelId'
-      });
-    }
+    // static associate(models) {
+    //   AllCode.hasMany(models.User, { foreignKey: 'Id', onDelete: 'CASCADE' });
+    // }
   };
-  JobLevel.init({
-    levelName: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    status: DataTypes.TINYINT,
+  AllCode.init({
+    type: DataTypes.STRING,
+    Key: DataTypes.STRING,
+    valueEn: DataTypes.STRING,
+    valueVi: DataTypes.STRING,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'JobLevel',
+    modelName: 'AllCode',
   });
-  return JobLevel;
+  return AllCode;
 };

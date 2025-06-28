@@ -18,20 +18,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       status: {
-        type: Sequelize.TINYINT
+        type: Sequelize.INTEGER
       },
       createdAt: {
         type: Sequelize.DATE
       },
       updatedAt: {
-        type: Sequelize.DATE
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });

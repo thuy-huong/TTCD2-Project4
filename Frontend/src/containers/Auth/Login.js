@@ -47,7 +47,8 @@ class Login extends Component {
                     message: data.message
                 })
             }
-            if (data && data.errCode == 0) {
+            if (data && data.errCode === 0) {
+                console.log(data.user)
                 this.props.userLoginSuccess(data.user)
 
             }
@@ -133,7 +134,7 @@ const mapDispatchToProps = dispatch => {
         navigate: (path) => dispatch(push(path)),
 
         // userLoginFail: () => dispatch(actions.userLoginFail()),
-        userLoginSuccess: (userInfor) => dispatch(actions.userLoginSuccess(userInfor))
+        userLoginSuccess: (userInfor) => dispatch(actions.userLoginSuccess(userInfor)),
     };
 };
 

@@ -1,0 +1,362 @@
+/* Header chính */
+.site-header {
+    position: sticky;
+        width: 100%;
+        z-index: 10;
+        top: 0;
+        background-color: #F8F9FB;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-header {
+  
+    top: 0;
+   
+    .main-bar {
+        padding: 15px 30px;   
+
+        .container-fluid {
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                
+
+                /* Logo */
+                    .logo-header img{
+                        // width: 200px;
+                        height: 50px;
+                        // background: url('../../assets/images/logo-light.png') center center no-repeat; 
+                    }
+
+                
+                /* Navigation */
+                .header-nav {
+                    flex-grow: 1;
+                    margin-left: 60px;
+                    /* Khoảng cách với logo */
+
+                    .navbar-nav {
+                            display: flex;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;    
+                            
+                            li {
+                                position: relative;
+                                padding: 0 20px;
+                                  
+                                a {
+                                    color: #333;
+                                    text-decoration: none;
+                                    font-weight: 500;
+                                    font-size: 17px;
+                                    display: block;
+                                    padding: 12px 0;
+                                    position: relative;
+                                    transition: color 0.3s, transform 0.3s;                               
+                                
+                                    &:hover{
+                                        color: #007bff;
+                                        transform: translateY(-2px);
+                                           
+                                    }
+                                }
+                                }
+
+                        }
+
+                }
+            }
+    }
+            
+}
+
+/* Dropdown menu */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    font-weight: 600;
+    min-width: 220px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 999;
+    list-style: none;
+    margin: 0;
+}
+
+.has-child:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sub-menu li a {
+    padding: 8px 20px;
+    display: block;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    /* Thêm hiệu ứng chuyển đổi cho màu nền, chữ và biến dạng */
+}
+
+.sub-menu li a:hover {
+    background-color: #f5f5f5;
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* Right section */
+.header-cta {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-cta form {
+    margin-right: 20px;
+}
+
+// .form-control {
+//     height: 36px;
+//     padding: 6px 12px;
+//     font-size: 14px;
+//     border: 1px solid #ddd;
+//     border-radius: 4px;
+//     min-width: 200px;
+// }
+
+.header-buttons {
+    display: flex;
+    gap: 5px;
+   
+    /* Tăng khoảng cách giữa các icon */
+    i{
+        font-size: 20px;
+        color: #00BFFF;
+        margin: 10px 0px;
+    }
+    .btn-post-jobs {
+        background: #f2f4f5 !important;
+        border: 1px solid #f2f4f5;
+        border-radius: 34px;
+        color: #263a4d;
+        align-items: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        gap: 8px;
+        height: 40px;
+        line-height: 22px;
+        padding: 0 16px;
+    }
+    .btn-sign{
+        background: #fff !important;
+        border: 1px solid #00BFFF;
+        border-radius: 34px;
+        color: #00BFFF;
+        padding: 0 16px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        height: 40px;
+    }
+    .btn-login{
+        background: #00BFFF !important;
+        border: 1px solid #00BFFF;
+        border-radius: 34px;
+        color: #fff;
+        padding: 0 16px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        height: 40px;
+       
+    }
+    .language{
+        display: flex;
+        gap: 7px;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        cursor: pointer;
+       
+        .active{
+                color: #00BFFF;
+                font-weight: 700;
+                font-size: 17px;
+              
+            }
+        
+        
+    }
+}
+
+
+
+/* Responsive (tùy chọn) */
+@media (max-width: 1200px) {
+    .container-fluid {
+        padding: 0 15px;
+    }
+
+    .navbar-nav>li {
+        padding: 0 10px;
+    }
+}
+
+
+/* banner */
+
+.twm-home1-banner-section {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.twm-bnr-left-section {
+    width: 600px;
+
+    padding: 10px;
+}
+
+.twm-bnr-title-small {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.site-text-primary {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.twm-bnr-title-large {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.twm-bnr-discription {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.twm-bnr-search-bar {
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    padding: 20px;
+    /* Padding cho thanh tìm kiếm */
+    background-color: white;
+    /* Nền trắng */
+    border-radius: 8px;
+    /* Bo tròn góc */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Bóng đổ nhẹ */
+
+    .form-group {
+            flex: 1;
+    
+            min-width: 150px;
+    
+            margin-right: 10px;
+    
+        }
+    
+        .form-group:last-child {
+            margin-right: 0;
+            /* Không có khoảng cách bên phải cho nhóm cuối */   }
+                        .form-control {
+                            padding-left: 35px;
+                            /* Khoảng cách bên trái để có chỗ cho icon */           }
+}
+
+
+
+// label {
+//     font-weight: bold;
+//     /* Đậm cho nhãn */
+// }
+
+.wt-search-bar-select {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px;
+
+}
+
+.twm-inputicon-box {
+    position: relative;
+    /* Để đặt icon */
+}
+
+.twm-input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    /* Khoảng cách từ bên trái */
+    transform: translateY(-50%);
+    /* Căn giữa icon theo chiều dọc */
+    color: #aaa;
+    /* Màu chữ cho icon */
+}
+
+
+
+.site-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 20px;
+    /* Padding cho nút */
+    cursor: pointer;
+    /* Con trỏ khi hover */
+    transition: background-color 0.3s;
+    /* Hiệu ứng chuyển đổi */
+}
+
+.site-button:hover {
+    background-color: #0056b3;
+    /* Màu khi hover */
+}
+
+.twm-bnr-popular-search {
+    margin-top: 20px;
+    /* Khoảng cách trên cho phần tìm kiếm phổ biến */
+}
+
+.twm-title {
+    font-weight: bold;
+    /* Đậm cho tiêu đề */
+}
+
+.twm-bnr-popular-search a {
+    color: #007bff;
+    /* Màu cho các liên kết */
+    text-decoration: none;
+    /* Không gạch chân */
+}
+
+.twm-bnr-popular-search a:hover {
+    text-decoration: underline;
+    /* Gạch chân khi hover */
+}
+
+/* Đẩy ảnh sang trái */
+.banner-image {
+    width: auto;
+    height: auto;
+}

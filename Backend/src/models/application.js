@@ -12,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Application.belongsTo(models.JobPost, { foreignKey: 'jobId', onDelete: 'CASCADE' });
       Application.belongsTo(models.User, { foreignKey: 'userId', onDelete: 'CASCADE' });
-      Application.belongsTo(models.ApplicationProfile, { foreignKey: 'profileId', onDelete: 'CASCADE' });
+      // Application.belongsTo(models.ApplicationProfile, { foreignKey: 'profileId', onDelete: 'CASCADE' });
     }
   };
   Application.init({
     jobId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     profileId: DataTypes.INTEGER,
-    status: DataTypes.TINYINT,
+    status: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   }, {

@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       companySize: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       address: {
         type: Sequelize.TEXT
@@ -27,7 +27,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       status: {
-        type: Sequelize.TINYINT
+        type: Sequelize.INTEGER
       },
       createdAt: {
         type: Sequelize.DATE
@@ -35,14 +35,6 @@ module.exports = {
       updatedAt: {
         type: Sequelize.DATE
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   down: async (queryInterface, Sequelize) => {

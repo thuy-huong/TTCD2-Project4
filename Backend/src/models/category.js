@@ -11,16 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Category.hasMany(models.ProfessionalPosition, { foreignKey: 'categoryId', onDelete: 'CASCADE' });
-      Category.belongsToMany(models.JobPost, {
-        through: models.JobPostCategoriesPositionLevel,
-        foreignKey: 'categoryId'
-      });
+      // Category.belongsToMany(models.JobPost, {
+      //   through: models.JobPostCategoriesPositionLevel,
+      //   foreignKey: 'categoryId'
+      // });
     }
   };
   Category.init({
-    categoryName: DataTypes.STRING,
+    categoryNameEn: DataTypes.STRING,
+    categoryNameVi: DataTypes.STRING,
     description: DataTypes.TEXT,
-    status: DataTypes.TINYINT,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   }, {

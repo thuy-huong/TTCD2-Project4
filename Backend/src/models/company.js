@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
   Company.init({
     companyName: DataTypes.STRING,
     industry: DataTypes.STRING,
-    companySize: DataTypes.STRING,
+    companySize: DataTypes.INTEGER,
     address: DataTypes.TEXT,
     description: DataTypes.TEXT,
     logo: DataTypes.STRING,
-    status: DataTypes.TINYINT,
+    status: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   }, {

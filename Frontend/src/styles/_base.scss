@@ -1,42 +1,38 @@
 /*
  * General styles
  */
- body, html {
-    background-image: "#fff";
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: $fontmain;
-    font-size: $base-size - 2px;
-    height: 100vh;
-    overflow: hidden;
-}
+ body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+ }
 
-.btn {
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    height: 30px;
-    line-height: 30px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    i {
-      font-size: $base-size - 3px;
-    }
-}
+// .btn {
+//     padding: 0;
+//     border: none;
+//     cursor: pointer;
+//     font-weight: 700;
+//     height: 30px;
+//     line-height: 30px;
+//     -moz-user-select: none;
+//     -webkit-user-select: none;
+//     user-select: none;
+//     i {
+//       font-size: $base-size - 3px;
+//     }
+// }
 
-.btn-edit, 
-.btn-add,
-.btn-delete,
-.btn-assign {
-  background-color: $colormain;
-  color: $common-text-color;
-  &:hover {
-    color: $common-text-color;
-    background-color: darken($colormain, 5);
-  }
-}
+// .btn-edit, 
+// .btn-add,
+// .btn-delete,
+// .btn-assign {
+//   background-color: $colormain;
+//   color: $common-text-color;
+//   &:hover {
+//     color: $common-text-color;
+//     background-color: darken($colormain, 5);
+//   }
+// }
 
 #password:invalid {
   font-family: $fontmain; // Fixed TH hien thi placeholder cho EDGE

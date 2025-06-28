@@ -8,29 +8,21 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      categoryName: {
+      categoryNameEn: {
+        type: Sequelize.STRING
+      },
+      categoryNameVi: {
         type: Sequelize.STRING
       },
       description: {
         type: Sequelize.TEXT
       },
-      status: {
-        type: Sequelize.TINYINT
-      },
       createdAt: {
         type: Sequelize.DATE
       },
       updatedAt: {
         type: Sequelize.DATE
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   down: async (queryInterface, Sequelize) => {

@@ -1,0 +1,23 @@
+/* CONTENT */
+
+
+.system-container-hide {
+    width: calc(100% - 60px);
+    left: 60px;
+    .info-data {
+            width: 100%;
+            display: flex;
+            justify-content: center;   }
+}
+
+.system-container {
+    position: relative;
+    width: calc(100% - 280px);
+    left: 280px;
+    transition: all .3s ease;
+    .info-data {
+            width: 100%;
+            display: flex;
+            justify-content: center;   }
+}
+

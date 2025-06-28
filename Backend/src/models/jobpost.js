@@ -14,14 +14,17 @@ module.exports = (sequelize, DataTypes) => {
       JobPost.hasMany(models.SaveJob, { foreignKey: 'jobId', onDelete: 'CASCADE' });
       JobPost.hasMany(models.Application, { foreignKey: 'jobId', onDelete: 'CASCADE' });
       JobPost.hasMany(models.Report, { foreignKey: 'jobId', onDelete: 'CASCADE' });
-      JobPost.belongsToMany(models.Category, {
-        through: models.JobPostCategoriesPositionLevel,
-        foreignKey: 'jobId'
-      });
+      // JobPost.belongsToMany(models.Category, {
+      //   through: models.JobPostCategoriesPositionLevel,
+      //   foreignKey: 'jobId'
+      // });
     }
   };
   JobPost.init({
     companyId: DataTypes.INTEGER,
+    category: DataTypes.INTEGER,
+    position: DataTypes.INTEGER,
+    level: DataTypes.INTEGER,
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     requirements: DataTypes.TEXT,
@@ -32,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     salaryMax: DataTypes.DECIMAL,
     location: DataTypes.STRING,
     deadline: DataTypes.DATE,
-    status: DataTypes.TINYINT,
+    status: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   }, {

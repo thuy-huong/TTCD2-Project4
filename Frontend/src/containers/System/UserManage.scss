@@ -1,3 +1,13 @@
+.system-container {
+    position: relative;
+    width: calc(100% - 280px);
+    left: 280px;
+    transition: all .3s ease;
+}
+.content-container .title{
+    color: black !important;
+}
+
 .btn-edit {
     width: 50px;
     border: none;
@@ -8,7 +18,7 @@
     &:hover {
         background: transparent !important;
         color: orange !important;
-
+        font-size: 17px;
     }
 }
 
@@ -22,5 +32,43 @@
     &:hover {
         background: transparent !important;
         color: rgb(222, 28, 28) !important;
+        font-size: 17px;
     }
+}
+.btn-add-new-user:hover{
+    font-size: 15px;
+}
+.modal-user-container{
+    .modal-header{
+        button{
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 25px;
+        }
+    }
+    .modal-user-body{
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+
+        .input-container {
+                display: flex;
+                flex-direction: column;
+                width: 49%;
+
+                &.max-width-input{
+                    width: 100%;
+                }
+
+                input {
+                   
+                    border-radius: 3px;
+                    height: 30px;
+                    border: 1px solid gray;
+                    outline: none;
+                    padding: 0 10px;
+                }   }
+    }
+    
 }

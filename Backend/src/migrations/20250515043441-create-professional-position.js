@@ -11,27 +11,21 @@ module.exports = {
       categoryId: {
         type: Sequelize.INTEGER
       },
-      positionName: {
+      PositionNameEn: {
+        type: Sequelize.STRING
+      },
+      PositionNameVi: {
         type: Sequelize.STRING
       },
       description: {
         type: Sequelize.TEXT
       },
-      status: {
-        type: Sequelize.TINYINT
-      },
       createdAt: {
+        allowNull: true,
         type: Sequelize.DATE
       },
       updatedAt: {
-        type: Sequelize.DATE
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
     });

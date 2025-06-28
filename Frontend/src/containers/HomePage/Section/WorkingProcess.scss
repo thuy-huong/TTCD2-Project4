@@ -1,0 +1,142 @@
+/* Quy trình làm vc */
+
+
+/* HOW IT WORK SECTION */
+.twm-how-it-work-area {
+    padding: 80px 0;
+}
+
+.twm-how-it-work-section .row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Ngăn không cho xuống dòng */
+    justify-content: center;
+    /* Căn giữa các bước */
+    gap: 5px;
+    /* Khoảng cách giữa các bước */
+}
+
+.twm-w-process-steps {
+    flex: 1;
+    min-width: 300px;
+    /* Độ rộng tối thiểu cho mỗi bước */
+    max-width: 400px;
+    /* Đặt chiều rộng tối đa cho mỗi bước */
+    position: relative;
+    padding: 10px;
+    /* Điều chỉnh padding nếu cần */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+.wt-small-separator-outer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wt-small-separator {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1967d2;
+    margin-bottom: 10px;
+}
+
+.wt-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.twm-large-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(25, 103, 210, 0.1);
+    line-height: 1;
+}
+
+.twm-w-pro-top {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bg-clr-sky {
+    background-color: #e3f2fd;
+
+}
+
+.bg-clr-pink {
+    background-color: #fce4ec;
+}
+
+.bg-clr-green {
+    background-color: #e8f5e9;
+}
+
+.twm-media span {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.twm-media img {
+    max-width: 30px;
+    height: auto;
+}
+
+.twm-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.twm-w-process-steps p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .twm-how-it-work-section .row {
+        flex-wrap: wrap;
+        /* Cho phép xuống dòng khi màn hình nhỏ */
+        justify-content: center;
+    }
+
+    .twm-w-process-steps {
+        min-width: calc(50% - 20px);
+        /* 2 cột trên tablet */
+        max-width: calc(50% - 20px);
+        /* Giới hạn chiều rộng tối đa cho tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .twm-w-process-steps {
+        min-width: 100%;
+        /* 1 cột trên mobile */
+        max-width: 100%;
+        /* Giới hạn chiều rộng tối đa cho mobile */
+    }
+
+    .wt-title {
+        font-size: 28px;
+    }
+}

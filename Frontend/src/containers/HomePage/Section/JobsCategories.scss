@@ -1,0 +1,176 @@
+/* JOBS CATEGORIES SECTION */
+.twm-job-categories-area {
+    padding: 40px 0;
+    margin: 60px;
+    background-color: #f5f7fa;
+}
+
+.wt-separator-two-part {
+    margin-bottom: 30px;
+}
+
+.section-head.left {
+    margin-bottom: 20px;
+}
+
+.wt-small-separator {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1967d2;
+    margin-bottom: 10px;
+}
+
+.wt-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+}
+
+.row.wt-separator-two-part-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wt-separator-two-part-left {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.wt-separator-two-part-right {
+    flex: 1;
+    text-align: left;
+}
+
+.twm-job-categories-section {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.job-categories-style1 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px !important;
+    /* Đảm bảo khoảng cách 15px giữa các khối với độ ưu tiên cao */
+    padding: 0 15px;
+    width: auto;
+    /* Đảm bảo chiều rộng tự động mở rộng */
+}
+
+.job-categories-style1 .owl-carousel {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: auto !important;
+}
+
+.job-categories-style1 .owl-carousel .owl-stage-outer,
+.job-categories-style1 .owl-carousel .owl-stage {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: auto !important;
+}
+
+.job-categories-style1 .owl-carousel .owl-item {
+    flex-shrink: 0;
+    width: 250px !important;
+    /* Cập nhật chiều rộng khớp với .job-categories-block */
+    margin-right: 0 !important;
+    /* Xóa margin mặc định của owl-carousel */
+}
+
+.job-categories-block {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    background: linear-gradient(to right, #e6f0fa, #ffffff);
+    border: 1px solid #e0e0e0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.twm-media {
+    margin-bottom: 15px;
+}
+
+.twm-media i {
+    font-size: 50px;
+    color: #007bff;
+}
+
+.twm-jobs-available {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.twm-content a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}
+
+.twm-content a:hover {
+    text-decoration: underline;
+}
+
+.job-categories-btn {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.site-button {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.site-button:hover {
+    background: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .job-categories-block {
+        width: 180px;
+    }
+
+    .twm-job-categories-section {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .job-categories-style1 .owl-carousel .owl-item {
+        width: 180px !important;
+    }
+
+    .row.wt-separator-two-part-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wt-separator-two-part-right {
+        text-align: left;
+    }
+}

@@ -2,30 +2,51 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from 'react-router-dom';
 import UserManage from '../containers/System/UserManage';
-import ProductManage from '../containers/System/ProductManage';
-import RegisterPackageGroupOrAcc from '../containers/System/RegisterPackageGroupOrAcc';
-
+import UserRedux from '../containers/System/Admin/UserRedux';
+import Header from '../containers/Header/Header';
+import CompanyRedux from '../containers/System/Admin/CompanyRedux'
+import './System.scss'
 class System extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible: true,
+        };
+    }
+
+    handleSidebarToggle = (visible) => {
+        console.log("Giá trị sidebarVisible từ Header:", visible);
+        this.setState({ visible: visible });
+    };
+
     render() {
-        const { systemMenuPath } = this.props;
+        const { systemMenuPath, isLoggedIn } = this.props;
+        const { visible } = this.state;
+
         return (
-            <div className="system-container">
-                <div className="system-list">
+            <>
+                {isLoggedIn && <Header onToggleSidebar={this.handleSidebarToggle} />}
+
+                <div className={visible ? 'system-container' : 'system-container-hide'}>
+
                     <Switch>
                         <Route path="/system/user-manage" component={UserManage} />
-                        <Route path="/system/product-manage" component={ProductManage} />
-                        <Route path="/system/register-package-group-or-account" component={RegisterPackageGroupOrAcc} />
-                        <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
+                        <Route path="/system/user-redux" component={UserRedux} />
+                        <Route path="/system/company-manage" component={CompanyRedux} />
+                        <Route component={() => <Redirect to={systemMenuPath} />} />
                     </Switch>
+
                 </div>
-            </div>
+            </>
         );
     }
 }
 
+
 const mapStateToProps = state => {
     return {
-        systemMenuPath: state.app.systemMenuPath
+        systemMenuPath: state.app.systemMenuPath,
+        isLoggedIn: state.user.isLoggedIn
     };
 };
 

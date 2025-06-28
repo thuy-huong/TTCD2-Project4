@@ -119,23 +119,25 @@ let createNewUser = (data) => {
                     errCode: 1,
                     message: 'Your email is already in use. Please try another email!'
                 })
+            } else {
+                let hashUserPasswordFormBcryptjs = await hashUserPassword(data.password)
+                await db.User.create({
+                    roleId: data.roleId,
+                    email: data.email,
+                    password: hashUserPasswordFormBcryptjs,
+                    fullName: data.fullName,
+                    phone: data.phone,
+                    // avatar: "",
+                    isActive: 1,
+                    createdAt: new Date(),
+                    updatedAt: new Date()
+                })
+                resolve({
+                    errCode: 0,
+                    message: 'ok'
+                })
             }
-            let hashUserPasswordFormBcryptjs = await hashUserPassword(data.password)
-            await db.User.create({
-                roleId: data.roleId,
-                email: data.email,
-                password: hashUserPasswordFormBcryptjs,
-                fullName: data.fullName,
-                phone: data.phone,
-                // avatar: "",
-                isActive: 1,
-                createdAt: new Date(),
-                updatedAt: new Date()
-            })
-            resolve({
-                errCode: 0,
-                message: 'ok'
-            })
+
         } catch (error) {
             reject(error)
         }
@@ -148,6 +150,7 @@ let deleteUser = (id) => {
             let user = await db.User.findOne({
                 where: { id: id }
             })
+            console.log(user)
             if (!user) {
                 resolve({
                     errCode: 2,
@@ -207,10 +210,26 @@ let updateUserData = (data) => {
     })
 }
 
+let getAllRoleService = (type) => {
+    return new Promise(async (resolve, reject) => {
+        console.log(type)
+        try {
+            let res = {};
+            let allRole = await db.AllCode.findAll();
+            res.errCode = 0,
+                res.data = allRole
+            resolve(res)
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
 module.exports = {
     handleUserLogin: handleUserLogin,
     getAllUsers: getAllUsers,
     createNewUser: createNewUser,
     deleteUser: deleteUser,
     updateUserData: updateUserData,
+    getAllRoleService: getAllRoleService,
 }
