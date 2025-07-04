@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     position: DataTypes.STRING,
     experienceYears: DataTypes.INTEGER,
     expectedSalary: DataTypes.DECIMAL,
-    cvUrl: DataTypes.STRING,
+    cvUrl: DataTypes.BLOB,
     status: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE

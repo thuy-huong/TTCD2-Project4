@@ -10,11 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Category.hasMany(models.ProfessionalPosition, { foreignKey: 'categoryId', onDelete: 'CASCADE' });
-      // Category.belongsToMany(models.JobPost, {
-      //   through: models.JobPostCategoriesPositionLevel,
-      //   foreignKey: 'categoryId'
-      // });
+      Category.hasMany(models.ProfessionalPosition, { foreignKey: 'categoryId', as: 'ProfessionalPositions', onDelete: 'CASCADE' });
     }
   };
   Category.init({

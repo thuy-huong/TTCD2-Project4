@@ -1,7 +1,6 @@
-import { raw } from 'body-parser';
+
 import db from '../models/index';
 import bcrypt from "bcryptjs";
-import { where } from 'sequelize';
 const salt = bcrypt.genSaltSync(10);
 
 let hashUserPassword = (password) => {
@@ -41,8 +40,6 @@ let handleUserLogin = (email, password) => {
                             userData.errCode = 4
                             userData.message = `Account has been locked. Please contact administrator.`
                         }
-
-
                     } else {
                         userData.errCode = 3
                         userData.message = `Wrong password`
@@ -54,11 +51,8 @@ let handleUserLogin = (email, password) => {
             } else {
                 userData.errCode = 1
                 userData.message = `Your's Email is'n exit in your system. Plx try other email`
-
             }
             resolve(userData)
-
-
         } catch (error) {
             reject(error)
         }
@@ -150,7 +144,6 @@ let deleteUser = (id) => {
             let user = await db.User.findOne({
                 where: { id: id }
             })
-            console.log(user)
             if (!user) {
                 resolve({
                     errCode: 2,
@@ -185,7 +178,6 @@ let updateUserData = (data) => {
                 raw: false
             })
             if (user) {
-                console.log(user)
                 user.fullName = data.fullName
                 user.phone = data.phone
                 user.avatar = data.avatar
@@ -212,7 +204,6 @@ let updateUserData = (data) => {
 
 let getAllRoleService = (type) => {
     return new Promise(async (resolve, reject) => {
-        console.log(type)
         try {
             let res = {};
             let allRole = await db.AllCode.findAll();

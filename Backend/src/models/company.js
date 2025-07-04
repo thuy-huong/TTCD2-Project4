@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      Company.belongsTo(models.AllCode, {
+        foreignKey: 'companySize',
+        targetKey: 'id',
+        as: 'sizeData'
+      });
       Company.hasMany(models.JobPost, { foreignKey: 'companyId', onDelete: 'CASCADE' });
       Company.hasMany(models.CompanyReview, { foreignKey: 'companyId', onDelete: 'CASCADE' });
     };
@@ -20,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     companySize: DataTypes.INTEGER,
     address: DataTypes.TEXT,
     description: DataTypes.TEXT,
-    logo: DataTypes.STRING,
+    logo: DataTypes.BLOB,
     status: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE

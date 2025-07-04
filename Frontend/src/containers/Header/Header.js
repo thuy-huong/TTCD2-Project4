@@ -42,7 +42,7 @@ class Header extends Component {
             profileDropdownVisible: !prevState.profileDropdownVisible
         }));
 
-        console.log(this.state)
+
     };
 
     // handleClickOutside = (e) => {
@@ -94,7 +94,7 @@ class Header extends Component {
                             )}
                         </li> */}
                         <Navigator menus={adminMenu} />
-                        <li className="divider" data-text="main"> <FormattedMessage id="AdminHeader.settings" /></li>
+                        {/* <li className="divider" data-text="main"> <FormattedMessage id="AdminHeader.settings" /></li> */}
                         <li> <a><i className='fa fa-user-circle icon'></i> <FormattedMessage id="AdminHeader.profile" /></a></li>
                         <li> <a><i className='fa fa-cog icon'></i> <FormattedMessage id="AdminHeader.settings" /></a></li>
                         <li> <a><i className="fa fa-question-circle icon" aria-hidden="true"></i> <FormattedMessage id="AdminHeader.help" /></a></li>

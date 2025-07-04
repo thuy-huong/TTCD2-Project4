@@ -10,10 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      JobPost.belongsTo(models.Company, { foreignKey: 'companyId', onDelete: 'CASCADE' });
+
       JobPost.hasMany(models.SaveJob, { foreignKey: 'jobId', onDelete: 'CASCADE' });
       JobPost.hasMany(models.Application, { foreignKey: 'jobId', onDelete: 'CASCADE' });
       JobPost.hasMany(models.Report, { foreignKey: 'jobId', onDelete: 'CASCADE' });
+
+      JobPost.belongsTo(models.Company, { foreignKey: 'companyId', as: 'companyData', onDelete: 'CASCADE' });
+      JobPost.belongsTo(models.Category, { foreignKey: 'category', as: 'categoryData', onDelete: 'CASCADE' });
+      JobPost.belongsTo(models.ProfessionalPosition, { foreignKey: 'position', as: 'positionData', onDelete: 'CASCADE' });
+      JobPost.belongsTo(models.AllCode, { foreignKey: 'level', as: 'levelData', onDelete: 'CASCADE' });
+      JobPost.belongsTo(models.AllCode, { foreignKey: 'status', as: 'statusData', onDelete: 'CASCADE' })
+      JobPost.belongsTo(models.AllCode, { foreignKey: 'jobType', as: 'jobTypeData', onDelete: 'CASCADE' })
       // JobPost.belongsToMany(models.Category, {
       //   through: models.JobPostCategoriesPositionLevel,
       //   foreignKey: 'jobId'

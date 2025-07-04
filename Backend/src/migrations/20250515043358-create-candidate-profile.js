@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.DECIMAL
       },
       cvUrl: {
-        type: Sequelize.STRING
+        type: Sequelize.BLOB
       },
       status: {
         type: Sequelize.INTEGER

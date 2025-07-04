@@ -9,9 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    // static associate(models) {
-    //   AllCode.hasMany(models.User, { foreignKey: 'Id', onDelete: 'CASCADE' });
-    // }
+    static associate(models) {
+      AllCode.hasMany(models.User, { foreignKey: 'Id', onDelete: 'CASCADE' });
+      AllCode.hasMany(models.Company, { foreignKey: 'Id', onDelete: 'CASCADE' })
+    }
   };
   AllCode.init({
     type: DataTypes.STRING,

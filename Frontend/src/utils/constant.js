@@ -3,7 +3,9 @@ export const path = {
     HOMEPAGE: '/home',
     LOGIN: '/login',
     LOG_OUT: '/logout',
-    SYSTEM: '/system'
+    SYSTEM: '/system',
+    EMPLOYER: '/employer',
+    CANDIDATE: '/candidate'
 };
 
 export const LANGUAGES = {

@@ -1,4 +1,3 @@
-import { size } from 'lodash';
 import actionTypes from '../actions/actionTypes';
 
 const initialState = {
@@ -7,6 +6,7 @@ const initialState = {
         roles: [],
         positions: [],
     },
+    topCompany: [],
     isLoadingAllCode: false,
 };
 
@@ -31,6 +31,16 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
                 isLoadingAllCode: false,
             };
+        case actionTypes.FETCH_TOP_COMPANY_SUCCESS:
+            return {
+                ...state,
+                topCompany: action.data
+            }
+        case actionTypes.FETCH_TOP_COMPANY_FAILED:
+            return {
+                ...state,
+                topCompany: []
+            }
         default:
             return state;
     }

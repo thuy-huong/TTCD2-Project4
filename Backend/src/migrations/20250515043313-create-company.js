@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       description: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT('long')
       },
       logo: {
         type: Sequelize.STRING

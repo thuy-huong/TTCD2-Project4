@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from 'react-router-dom';
-import UserManage from '../containers/System/UserManage';
+import UserManage from '../containers/System/Admin/UserManage/UserManage';
 import UserRedux from '../containers/System/Admin/UserRedux';
 import Header from '../containers/Header/Header';
-import CompanyRedux from '../containers/System/Admin/CompanyRedux'
+import FromAddCompany from '../containers/System/Admin/CompanyManage/FromAddCompany';
+import TableCompanyManage from '../containers/System/Admin/CompanyManage/TableCompanyManage';
 import './System.scss'
+import CategoryManage from '../containers/System/Admin/Category/CategoryManage';
+import ProfessionalPositionManage from '../containers/System/Admin/Category/ProfessionalPositionManage';
+
 class System extends Component {
     constructor(props) {
         super(props);
@@ -32,7 +36,10 @@ class System extends Component {
                     <Switch>
                         <Route path="/system/user-manage" component={UserManage} />
                         <Route path="/system/user-redux" component={UserRedux} />
-                        <Route path="/system/company-manage" component={CompanyRedux} />
+                        <Route path="/system/company-manage" component={TableCompanyManage} />
+                        <Route path="/system/add-company" component={FromAddCompany} />
+                        <Route path="/system/category-manage" component={CategoryManage} />
+                        <Route path="/system/professional-position-manage" component={ProfessionalPositionManage} />
                         <Route component={() => <Redirect to={systemMenuPath} />} />
                     </Switch>
 

@@ -6,8 +6,8 @@ export const adminMenu = [
                 name: 'menu.admin.user',
                 icon: 'fa-user',
                 subMenus: [
-                    { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
-                    { name: 'menu.admin.manage-admin', link: '/system/user-redux' }
+
+                    { name: 'menu.admin.manage-admin', link: '/system/user-manage' }
                 ]
             }
         ]
@@ -20,9 +20,8 @@ export const adminMenu = [
                 icon: 'fa-list',
                 link: '/system/user-manage',
                 subMenus: [
-                    { name: 'menu.admin.manage-cate', link: '/system/user-manage' },
-                    { name: 'menu.admin.position', link: '/system/user-redux' },
-                    { name: 'menu.admin.level', link: '/system/user-redux' }
+                    { name: 'menu.admin.manage-cate', link: '/system/category-manage' },
+                    { name: 'menu.admin.position', link: '/system/professional-position-manage' },
                 ]
             }
         ]
@@ -33,7 +32,12 @@ export const adminMenu = [
             {
                 name: 'menu.admin.company',
                 icon: 'fa-building',
-                link: '/system/company-manage'
+                subMenus: [
+                    { name: 'manageCompany.add', link: '/system/add-company' },
+                    { name: 'manageCompany.list', link: '/system/company-manage' },
+
+                ]
+
             }
         ]
     }

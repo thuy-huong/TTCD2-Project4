@@ -8,19 +8,38 @@ import w3 from '../../../assets/images/client-logo/w3.png'
 import w4 from '../../../assets/images/client-logo/w4.png'
 import w5 from '../../../assets/images/client-logo/w5.png'
 import w6 from '../../../assets/images/client-logo/w6.png'
+import * as actions from '../../../store/actions'
 
 
 
 class Companies extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            arrCompany: [],
+            logoImg: '',
+        }
+    }
 
+    async componentDidMount() {
+        this.props.loadTopCompany()
+
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.topCompany !== this.props.topCompany) {
+            this.setState({
+                arrCompany: this.props.topCompany
+            })
+        }
+
+    }
 
     render() {
-
+        let arrCompany = this.state.arrCompany
         return (
-
             <>
-
                 {/* <!-- CÁC CÔNG TY HÀNG ĐẦU BẮT ĐẦU --> */}
                 <div className="section-full p-t120 site-bg-white twm-companies-wrap">
 
@@ -38,64 +57,29 @@ class Companies extends Component {
                             <div className="owl-carousel home-client-carousel2 owl-btn-vertical-center">
 
                                 {/* <!-- Danh sách logo công ty --> */}
-                                <div className="item">
-                                    <div className="ow-client-logo">
-                                        <div className="client-logo client-logo-media">
-                                            <a href="employer-list.html"><img src={w1} alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                {arrCompany && arrCompany.length > 0
+                                    && arrCompany.map((item, index) => {
+                                        let imageBase64 = ''
+                                        if (item.logo) {
+                                            imageBase64 = new Buffer(item.logo, 'base64').toString('binary')
+                                        }
+                                        return (
+                                            <div className="item">
+                                                <div className="ow-client-logo">
+                                                    <div className="client-logo client-logo-media">
+                                                        <a href="#"><img src={imageBase64} alt={item.companyName} /></a>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                <div className="item">
-                                    <div className="ow-client-logo">
-                                        <div className="client-logo client-logo-media">
-                                            <a href="employer-list.html"><img src={w2} alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                        )
+                                    })}
 
-                                <div className="item">
-                                    <div className="ow-client-logo">
-                                        <div className="client-logo client-logo-media">
-                                            <a href="employer-list.html"><img src={w3} alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="item">
-                                    <div className="ow-client-logo">
-                                        <div className="client-logo client-logo-media">
-                                            <a href="employer-list.html"><img src={w4} alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="item">
-                                    <div className="ow-client-logo">
-                                        <div className="client-logo client-logo-media">
-                                            <a href="employer-list.html"><img src={w5} alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="item">
-                                    <div className="ow-client-logo">
-                                        <div className="client-logo client-logo-media">
-                                            <a href="employer-list.html"><img src={w6} alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* <!-- (Có thể lặp lại các logo tùy mục đích trình bày) --> */}
 
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
-                {/* <!-- CÁC CÔNG TY HÀNG ĐẦU KẾT THÚC --> */}
             </>
 
         );
@@ -107,13 +91,13 @@ const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
-
+        topCompany: state.admin.topCompany
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        loadTopCompany: () => dispatch(actions.fetchTopCompany())
     };
 };
 

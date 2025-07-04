@@ -36,18 +36,7 @@
         "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
     },
     "menu": {
-        "system": {
-            "header": "Hệ thống",
-            "system-administrator": {
-                "header": "Quản trị hệ thống",
-                "user-manage": "Quản lý người sử dụng",
-                "product-manage": "Quản lý gói",
-                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
-            },
-            "system-parameter": {
-                "header": "Tham số hệ thống"
-            }
-        },
+       
         "admin":{
             "user": "Người dùng",
             "manage-user": "Quản lý người dùng",
@@ -61,13 +50,60 @@
     },
     "manageCompany": {
         "add": "Thêm mới doanh nghiệp",
+        "list": "Danh sách doanh nghiệp",
         "name": "Tên doanh nghiệp",
         "industry": "Lĩnh vực",
         "size": "Quy mô doanh nghiệp",
         "address": "Địa chỉ",
         "description": "Mô tả",
         "status": "Trạng thái",
-        "save": "Lưu doanh nghiệp"
+        "save": "Lưu doanh nghiệp",
+        "upload": "Tải ảnh lên",
+        
+        "error": {
+            "companyName": "Tên doanh nghiệp không được để trống",
+            "industry": "Ngành nghề không được để trống",
+            "companySize": "Vui lòng chọn quy mô doanh nghiệp",
+            "address": "Địa chỉ không được để trống",
+            "description": "Mô tả không được để trống"
+          }
+          
+    },
+
+    "manageCategory": {
+        "add": "Thêm mới danh mục",
+        "list": "Danh sách danh mục",
+        "name": "Tên danh mục",
+        "description": "Mô tả",
+        "professionNumber":"Số nghề"
+    },
+    "manageUser": {
+        "add": "Thêm mới người dùng",
+        "list": "Danh sách người dùng",
+        "name": "Họ và tên",
+        "phone": "Số điện thoại",
+        "role": "Vai trò",
+        "password": "Mật khẩu",
+        "save": "Lưu người dùng",
+        "close": "Đóng",
+        "error": {
+            "email_required": "Email không được để trống",
+            "email_invalid": "Email không đúng định dạng",
+            "password": "Mật khẩu không được để trống",
+            "name": "Họ tên không được để trống",
+            "phone": "Số điện thoại không được để trống",
+            "role": "Vui lòng chọn vai trò người dùng"
+        }
+    },
+    "managePosition": {
+        "title": "Quản lý vị trí chuyên môn",
+        "add": "Thêm mới vị trí chuyên môn",
+        "list": "Danh sách vị trí chuyên môn",
+        "name": "Tên vị trí",
+        "save": "Lưu vị trí",
+        "close": "Đóng",
+        "cate": "Danh mục"
+       
     }
    
 }

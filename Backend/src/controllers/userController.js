@@ -1,4 +1,4 @@
-import db from '../models/index';
+
 import userService from "../services/userSevice"
 
 let handleLogin = async (req, res) => {
@@ -53,7 +53,6 @@ let handleEditUsers = async (req, res) => {
     return res.status(200).json(message)
 }
 let handleDeleteUsers = async (req, res) => {
-    console.log('check id', req.body.id)
     if (!req.body.id) {
         return res.status(200).json({
             errCode: 1,

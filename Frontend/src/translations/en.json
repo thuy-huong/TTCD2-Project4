@@ -31,18 +31,6 @@
 
    
     "menu": {
-        "system": {
-            "header": "System",
-            "system-administrator": {
-                "header": "System Administrator",
-                "user-manage": "User manage",
-                "product-manage": "Package manage",
-                "register-package-group-or-account": "Register service package for group/account"
-            },
-            "system-parameter": {
-                "header": "System-parameter"
-            }
-        },
         "admin":{
             "user": "Users",
             "manage-user": "Manage Users",
@@ -56,13 +44,58 @@
     },
     "manageCompany": {
         "add": "Add new company",
+        "list": "List company",
         "name": "Company name",
         "industry": "Industry",
         "size": "Company size",
         "address": "Address",
         "description": "Description",
         "status": "Status",
-        "save": "Save company"
+        "save": "Save company",
+        "upload": "Upload a photo",
+        "error": {
+            "companyName": "Company name is required",
+            "industry": "Industry is required",
+            "companySize": "Please select company size",
+            "address": "Address is required",
+            "description": "Description is required"
+          }
+    },
+    "manageCategory": {
+        "add": "Add new category",
+        "list": "List category",
+        "name": "Category name",
+        "description": "Description",
+        "professionNumber":"profession number"
+    },
+    "manageUser": {
+        "add": "Add new user",
+        "list": "List user",
+        "name": "Full name",
+        "phone": "Phone number",
+        "role": "Role",
+        "password" : "Password",
+        "save": "Save user",
+        "close": "Close",
+        "error": {
+            "email_required": "Email is required",
+            "email_invalid": "Invalid email format",
+            "password": "Password is required",
+            "name": "Full name is required",
+            "phone": "Phone number is required",
+            "role": "Please select role"
+            }
+    },
+    "managePosition": {
+        "title": "Professional position Manage",
+        "add": "Add new professional position",
+        "list": "List professional position",
+        "name": "Position Name",
+        "cate": "Category",
+        "save": "Lưu vị trí",
+        "close": "Đóng"
+       
     }
+   
     
 }
